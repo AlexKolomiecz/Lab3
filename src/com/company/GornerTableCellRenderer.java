@@ -45,8 +45,8 @@ public class GornerTableCellRenderer implements TableCellRenderer {
         String formattedDouble = formatter.format(value);
 // Установить текст надписи равным строковому представлению числа
         label.setText(formattedDouble);
-        if (col==1 && needle!=null && needle.equals(formattedDouble)) {
-// Номер столбца = 1 (т.е. второй столбец) + иголка не null
+        if ((col==1 || col==2) && needle!=null && needle.equals(formattedDouble)) {
+// Номер столбца = 1 или 2 (т.е. второй или третий столбцы) + иголка не null
 // (значит что-то ищем) +
 // значение иголки совпадает со значением ячейки таблицы -
 // окрасить задний фон панели в красный цвет
