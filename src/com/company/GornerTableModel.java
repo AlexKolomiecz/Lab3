@@ -84,7 +84,7 @@ public class GornerTableModel extends AbstractTableModel {
         if (col!=2) {
             return Double.class;
         } else {
-            return String.class;
+            return Boolean.class;
         }
     }
 }
