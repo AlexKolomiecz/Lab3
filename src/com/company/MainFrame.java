@@ -43,6 +43,7 @@ public class MainFrame extends JFrame {
     private JMenuItem saveToTextMenuItem;
     private JMenuItem saveToGraphicsMenuItem;
     private JMenuItem searchValueMenuItem;
+    private JMenuItem HelpItem;
     // Поля ввода для считывания значений переменных
     private JTextField textFieldFrom;
     private JTextField textFieldTo;
@@ -76,6 +77,10 @@ public class MainFrame extends JFrame {
         JMenu tableMenu = new JMenu("Таблица");
 // Добавить его в главное меню
         menuBar.add(tableMenu);
+// Создаём пункт меню "Справка"
+        JMenu helpMenu = new JMenu("Справка");
+// Добавить его в главное меню
+        menuBar.add(helpMenu);
 // Создать новое "действие" по сохранению в текстовый файл
         Action saveToTextAction = new AbstractAction("Сохранить в текстовый файл") {
             public void actionPerformed(ActionEvent event) {
@@ -118,6 +123,16 @@ public class MainFrame extends JFrame {
                         fileChooser.getSelectedFile());
             }
         };
+        Action aboutAction = new AbstractAction("О программе") {
+            public void actionPerformed(ActionEvent event) {
+// Показать диалоговое окно
+                JOptionPane.showMessageDialog(MainFrame.this, "Коломиец, 10 группа");
+            }
+        };
+// Добавить соответствующий пункт подменю в меню "Справка"
+        HelpItem = helpMenu.add(aboutAction);
+// По умолчанию пункт меню является доступным
+        HelpItem.setEnabled(true);
 // Добавить соответствующий пункт подменю в меню "Файл"
         saveToGraphicsMenuItem = fileMenu.add(saveToGraphicsAction);
 // По умолчанию пункт меню является недоступным(данных ещѐ нет)
